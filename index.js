@@ -129,6 +129,17 @@ if (dolphins1AverageScore > koalas1AverageScore) {
 
 
 
+/*3. Bonus 1: Include a requirement for a minimum score of 100. With this rule, a 
+team only wins if it has a higher score than the other team, and the same time a 
+score of at least 100 points. Hint: Use a logical operator to test for minimum 
+score, as well as multiple else-if blocks � 
+
+Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+
+*/
+
+
+
 // Calculate the average score for each team
 const dolphinsBonus1 = 97 + 112 + 101; // Calculate the total score for the first set of dolphins' games
 const koalasBonus1 = 109 + 95 + 123; // Calculate the total score for the first set of koalas' games
