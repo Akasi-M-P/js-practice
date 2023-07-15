@@ -112,4 +112,20 @@ const koalas2AverageScore = koalas2 / average;
 console.log(koalas2AverageScore);
 
 
+/*Compare the team's average scores to determine the winner of the competition, 
+and print it to the console. Don't forget that there can be a draw, so test for that 
+as well (draw means they have the same average score) */
+
+// Determine the team with the highest average score for the first set of games
+if (dolphins1AverageScore > koalas1AverageScore) {
+  console.log(
+    `Dolphins has the highest average score of ${dolphins1AverageScore}`
+  );
+} else if (dolphins1AverageScore < koalas1AverageScore) {
+  console.log(`Koalas has the highest average score of ${koalas1AverageScore}`);
+} else {
+  console.log(`Dolphins and Koalas have the same average score`);
+}
+
+
 
