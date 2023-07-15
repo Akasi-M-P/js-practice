@@ -175,6 +175,15 @@ if (
 
 
 
+/* 4. Bonus 2: Minimum score also applies to a draw! So a draw only happens when 
+both teams have the same score and both have a score greater or equal 100 
+points. Otherwise, no team wins the trophy 
+
+ Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+*/
+
+
+
 // Calculate the average score for each team
 const dolphinsBonus2 = 97 + 112 + 101; // Calculate the total score for the first set of dolphins' games
 const koalasBonus2 = 109 + 95 + 106; // Calculate the total score for the first set of koalas' games
