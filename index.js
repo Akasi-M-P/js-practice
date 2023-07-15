@@ -18,3 +18,15 @@ console.log(johnBMI);
 const markHigherBMI = markBMI > johnBMI;
 
 console.log(markHigherBMI);
+
+
+
+const driverAge = 10; // Assigning the value 50 to the variable driverAge
+
+if (driverAge >= 18) {
+  // Checking if driverAge is greater than or equal to 18
+  console.log(`Driver passed with ${driverAge} years`); // Printing a message indicating the driver passed
+} else {
+  const underAge = 18 - driverAge; // Calculating the number of years under the legal driving age
+  console.log(`Driver is ${underAge} years under age to drive`); // Printing a message indicating the driver is under age
+}
