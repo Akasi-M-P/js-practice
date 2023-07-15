@@ -84,4 +84,32 @@ Test data:
 */
 
 
+// Calculate the average score for each team
+const dolphins1 = 96 + 108 + 89; // Calculate the total score for the first set of dolphins' games
+const koalas1 = 88 + 91 + 110; // Calculate the total score for the first set of koalas' games
+const average = 3; // Define the number of games played (used for calculating the average)
+
+// Calculate the average score for the first set of dolphins' games
+const dolphins1AverageScore = dolphins1 / average;
+console.log(dolphins1AverageScore);
+
+// Calculate the average score for the first set of koalas' games
+const koalas1AverageScore = koalas1 / average;
+console.log(koalas1AverageScore);
+
+// Calculate the average score for the second set of dolphins' games
+const dolphins2 = 97 + 112 + 101; // Calculate the total score for the second set of dolphins' games
+
+// Calculate the average score for the second set of dolphins' games
+const dolphins2AverageScore = dolphins2 / average;
+console.log(dolphins2AverageScore);
+
+// Calculate the average score for the second set of koalas' games
+const koalas2 = 109 + 95 + 123; // Calculate the total score for the second set of koalas' games
+
+// Calculate the average score for the second set of koalas' games
+const koalas2AverageScore = koalas2 / average;
+console.log(koalas2AverageScore);
+
+
 
