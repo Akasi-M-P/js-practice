@@ -133,7 +133,7 @@ if (dolphins1AverageScore > koalas1AverageScore) {
 const dolphinsBonus1 = 97 + 112 + 101; // Calculate the total score for the first set of dolphins' games
 const koalasBonus1 = 109 + 95 + 123; // Calculate the total score for the first set of koalas' games
 const average = 3; // Define the number of games played (used for calculating the average)
-const minimumScore = 100;
+const minimumScore = 100; // Define the minimum score required to be considered for winning
 
 // Calculate the average score for the first set of dolphins' games
 const dolphinsBonus1AverageScore = dolphinsBonus1 / average;
@@ -143,21 +143,23 @@ console.log(dolphinsBonus1AverageScore);
 const koalasBonus1AverageScore = koalasBonus1 / average;
 console.log(koalasBonus1AverageScore);
 
+// Check the conditions for determining the winner
 if (
-  dolphinsBonus1AverageScore > koalasBonus1AverageScore &&
-  dolphinsBonus1AverageScore >= minimumScore
+  dolphinsBonus1AverageScore > koalasBonus1AverageScore && // Check if Dolphins' average score is higher than Koalas'
+  dolphinsBonus1AverageScore >= minimumScore // Check if Dolphins' average score meets the minimum score requirement
 ) {
   console.log(
-    `Dolphins won the 🏆 with average score of ${dolphinsBonus1AverageScore}`
+    `Dolphins won the 🏆 with an average score of ${dolphinsBonus1AverageScore}`
   );
 } else if (
-  koalasBonus1AverageScore > dolphinsBonus1AverageScore &&
-  koalasBonus1AverageScore >= minimumScore
+  koalasBonus1AverageScore > dolphinsBonus1AverageScore && // Check if Koalas' average score is higher than Dolphins'
+  koalasBonus1AverageScore >= minimumScore // Check if Koalas' average score meets the minimum score requirement
 ) {
   console.log(
-    `Koalas won the 🏆 with average score of ${koalasBonus1AverageScore}`
+    `Koalas won the 🏆 with an average score of ${koalasBonus1AverageScore}`
   );
 } else {
-  console.log(`Dolphins and Koalas have the same average score`);
+  console.log(`Dolphins and Koalas have the same average score`); // If none of the conditions are met, both teams have the same average score
+}
 
 
