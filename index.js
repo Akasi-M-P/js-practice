@@ -174,3 +174,39 @@ if (
 }
 
 
+
+// Calculate the average score for each team
+const dolphinsBonus2 = 97 + 112 + 101; // Calculate the total score for the first set of dolphins' games
+const koalasBonus2 = 109 + 95 + 106; // Calculate the total score for the first set of koalas' games
+const average = 3; // Define the number of games played (used for calculating the average)
+const minimumScore = 100; // Define the minimum score required to be considered for winning
+
+// Calculate the average score for the first set of dolphins' games
+const dolphinsBonus2AverageScore = dolphinsBonus2 / average;
+console.log(dolphinsBonus2AverageScore);
+
+// Calculate the average score for the first set of koalas' games
+const koalasBonus2AverageScore = koalasBonus2 / average;
+console.log(koalasBonus2AverageScore);
+
+// Check the conditions for determining the winner or draw
+if (
+  dolphinsBonus2AverageScore > koalasBonus2AverageScore && // Check if Dolphins' average score is higher than Koalas'
+  dolphinsBonus2AverageScore >= minimumScore // Check if Dolphins' average score meets the minimum score requirement
+) {
+  console.log(`Dolphins won the 🏆 with an average score of ${dolphinsBonus2AverageScore}`);
+} else if (
+  koalasBonus2AverageScore > dolphinsBonus2AverageScore && // Check if Koalas' average score is higher than Dolphins'
+  koalasBonus2AverageScore >= minimumScore // Check if Koalas' average score meets the minimum score requirement
+) {
+  console.log(`Koalas won the 🏆 with an average score of ${koalasBonus2AverageScore}`);
+} else if (
+  dolphinsBonus2AverageScore === koalasBonus2AverageScore && // Check if Dolphins' and Koalas' average scores are equal
+  dolphinsBonus2AverageScore >= minimumScore // Check if the average score meets the minimum score requirement
+) {
+  console.log(`Dolphins and Koalas drew with the same average score of ${dolphinsBonus2AverageScore}`);
+} else {
+  console.log("No team won the trophy! 😌"); // If none of the conditions are met, no team meets the winning criteria
+}
+
+
