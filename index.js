@@ -129,3 +129,35 @@ if (dolphins1AverageScore > koalas1AverageScore) {
 
 
 
+// Calculate the average score for each team
+const dolphinsBonus1 = 97 + 112 + 101; // Calculate the total score for the first set of dolphins' games
+const koalasBonus1 = 109 + 95 + 123; // Calculate the total score for the first set of koalas' games
+const average = 3; // Define the number of games played (used for calculating the average)
+const minimumScore = 100;
+
+// Calculate the average score for the first set of dolphins' games
+const dolphinsBonus1AverageScore = dolphinsBonus1 / average;
+console.log(dolphinsBonus1AverageScore);
+
+// Calculate the average score for the first set of koalas' games
+const koalasBonus1AverageScore = koalasBonus1 / average;
+console.log(koalasBonus1AverageScore);
+
+if (
+  dolphinsBonus1AverageScore > koalasBonus1AverageScore &&
+  dolphinsBonus1AverageScore >= minimumScore
+) {
+  console.log(
+    `Dolphins won the 🏆 with average score of ${dolphinsBonus1AverageScore}`
+  );
+} else if (
+  koalasBonus1AverageScore > dolphinsBonus1AverageScore &&
+  koalasBonus1AverageScore >= minimumScore
+) {
+  console.log(
+    `Koalas won the 🏆 with average score of ${koalasBonus1AverageScore}`
+  );
+} else {
+  console.log(`Dolphins and Koalas have the same average score`);
+
+
