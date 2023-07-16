@@ -1,3 +1,5 @@
+"use strict"
+
 //Mark's BMI Calculation
 const markMass = 78;
 const markHeight = 1.69;
