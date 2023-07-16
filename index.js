@@ -301,3 +301,47 @@ function checkWinner(avgDolphins, avgKoalas) {
 
 console.log(checkWinner()); // logs "No team won the game"!
 
+
+
+/* Coding Challenge #2
+Steven is still building his tip calculator, using the same rules as before: Tip 15% of 
+the bill if the bill value is between 50 and 300, and if the value is different, the tip is 
+20%.
+Your tasks:
+1. Write a function 'calcTip' that takes any bill value as an input and returns 
+the corresponding tip, calculated based on the rules above (you can check out 
+the code from first tip calculator challenge if you need to). Use the function 
+type you like the most. Test the function using a bill value of 100
+2. And now let's use arrays! So create an array 'bills' containing the test data 
+below
+3. Create an array 'tips' containing the tip value for each bill, calculated from 
+the function you created before
+4. Bonus: Create an array 'total' containing the total values, so the bill + tip
+Test data: 125, 555 and 44 */
+
+
+// Define a function named calcTip that takes a bill amount as a parameter
+const calcTip = (bill) => {
+  // Check if the bill amount is between 50 and 300 (inclusive)
+  // If true, calculate the tip as 15% of the bill amount
+  // If false, calculate the tip as 20% of the bill amount
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+// Calculate the tip amount for different bill amounts using the calcTip function and log the results
+console.log(calcTip(125)); // Logs "The tip amount is 18.75"
+console.log(calcTip(555)); // Logs "The tip amount is 111"
+console.log(calcTip(44)); // Logs "The tip amount is 8.8"
+
+// Create an array named bills containing different bill amounts
+const bills = [125, 555, 44];
+
+// Calculate the tip amounts for each bill in the bills array using the calcTip function and store them in the tips array
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+
+// Calculate the total amounts (bill + tip) for each bill in the bills array and store them in the totals array
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+// Log the totals array
+console.log(totals); // Logs an array of total amounts [143.75, 666, 52.8]
+
