@@ -479,3 +479,51 @@ const game = {
     team2: 6.5,
   },
 };
+
+
+
+
+// Destructuring assignment: Extracts values from game.players array and assigns them to players1 and players2.
+const [players1, players2] = game.players;
+
+// Destructuring assignment: Extracts the first element (goalkeeper) from players1 and puts the rest in fieldPlayers array using the spread operator.
+const [gk, ...fieldPlayers] = players1;
+
+// Combining arrays: Merges players1 and players2 arrays into a new array called allPlayers.
+const allPlayers = [...players1, ...players2];
+
+// Log the allPlayers array to the console.
+console.log(allPlayers);
+
+// Creating a new array players1Final by adding three players (Thiago, Coutinho, and Perisic) to the end of players1 array.
+const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+
+// Log the players1Final array to the console.
+console.log(players1Final);
+
+// Destructuring assignment with nested objects: Extracts values from the game.odds object and assigns them to variables team1, draw, and team2.
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+
+// Log the values of team1, draw, and team2 to the console.
+console.log(team1, draw, team2);
+
+// Declaring a function named printGoals, which takes a variable number of arguments (players) using the rest parameter.
+const printGoals = function (...players) {
+  // Log the players array to the console.
+  console.log(players);
+
+  // Log the number of goals scored (the length of the players array) to the console.
+  console.log(`${players.length} goals were scored`);
+};
+
+// Call the printGoals function with the game.scored array as arguments using the spread operator.
+printGoals(...game.scored);
+
+// Conditional statement: If team1 has higher odds than team2, log "Team 1 is more likely to win" to the console.
+team1 < team2 && console.log("Team 1 is more likely to win");
+
+// Conditional statement: If team1 has lower odds than team2, log "Team 2 is more likely to win" to the console.
+team1 > team2 && console.log("Team 2 is more likely to win");
+
