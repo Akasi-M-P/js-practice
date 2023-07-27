@@ -523,7 +523,92 @@ printGoals(...game.scored);
 
 // Conditional statement: If team1 has higher odds than team2, log "Team 1 is more likely to win" to the console.
 team1 < team2 && console.log("Team 1 is more likely to win");
-
-// Conditional statement: If team1 has lower odds than team2, log "Team 2 is more likely to win" to the console.
 team1 > team2 && console.log("Team 2 is more likely to win");
+
+
+
+/* Coding Challenge #2
+Let's continue with our football betting app! Keep using the 'game' variable from 
+before.
+Your tasks:
+1. Loop over the game.scored array and print each player name to the console, 
+along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already 
+studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+Odd of victory Bayern Munich: 1.33
+Odd of draw: 3.25
+Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them 
+(except for "draw"). Hint: Note how the odds and the game objects have the 
+same property names �
+4. Bonus: Create an object called 'scorers' which contains the names of the 
+players who scored as properties, and the number of goals as the value. In this 
+game, it will look like this:
+{
+ Gnarby: 1,
+ Hummels: 1,
+ Lewandowski: 2
+}*/
+
+
+// Loop through the 'game.scored' array, which contains objects with goal information (goalNumber and player).
+for (const { goalNumber, player } of game.scored) {
+  // Log each player's goalNumber and name to the console.
+  console.log(`Goal ${goalNumber} : ${player}`);
+}
+
+// Get an array containing the values (goal information objects) from 'game.scored'.
+const goalNumber = Object.values(game.scored);
+// Log the 'goalNumber' array to the console.
+console.log(goalNumber);
+
+// Loop through the 'game.scored' array using the 'entries()' method, which provides both the index (i) and the goalScorer (goal information object).
+for (const [i, goalScorer] of game.scored.entries()) {
+  // Log each player's index and name to the console.
+  console.log(`Goal ${i} : ${goalScorer}`);
+}
+
+// Get an array containing the odds values from the 'game.odds' object.
+const odds = Object.values(game.odds);
+// Initialize a variable 'average' to calculate the average of odds.
+let average = 0;
+// Loop through the 'odds' array and sum up all the odds.
+for (const odd of odds) {
+  average += odd;
+}
+// Calculate the average by dividing the sum by the number of odds and log it to the console.
+average /= odds.length;
+console.log(average);
+
+// Loop through the 'game.odds' object, which contains odds for each team and the draw.
+for (const [team, odd] of Object.entries(game.odds)) {
+  // Determine whether it's a draw or a team victory and create the 'teamStr' accordingly.
+  const teamStr =
+    team === "x"
+      ? "draw"
+      : `victory
+${game[team]}`;
+  // Log the odds of each team or draw to the console.
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+
+// Initialize an empty object called 'scorers' to keep track of goal counts for each player.
+const scorers = {};
+
+// Loop through the 'game.scored' array again to count the number of goals for each player and store it in the 'scorers' object.
+for (const goalScorer of game.scored) {
+  // Check if the player is already in the 'scorers' object.
+  if (scorers.hasOwnProperty(goalScorer)) {
+    // If the player is in the object, increment their goal count by 1.
+    scorers[goalScorer] += 1;
+  } else {
+    // If the player is not in the object, add them with 1 goal.
+    scorers[goalScorer] = 1;
+  }
+}
+
+// Log the 'scorers' object, which now contains the names of players who scored as properties and the number of goals as values.
+console.log(scorers);
+
 
